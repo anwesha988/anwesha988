@@ -1,0 +1,6 @@
+- hosts: ip-172-31-7-199.ap-south-1.compute.internal  
+  become: true
+  become_user: root
+  tasks:
+  - name: Create a deployment
+    command: docker service create --name myapp -p 8282:8080 --replicas 3 anwesha988/myproject:CICD 
